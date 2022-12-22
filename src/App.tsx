@@ -1,24 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [toggle,changeToggle]=useState<boolean>(true)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>DNS Playground for Andrew</h1>
+      {toggle?<h5>Now you see me</h5>:<h5>Now you dont</h5>}
+      <button onClick={()=>{changeToggle(!toggle)}}>Change me</button>
     </div>
   );
 }
